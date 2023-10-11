@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6d9d457c2dec4b4e84cbbcacad8f884, type: 3}
+  m_Name: Apple
+  m_EditorClassIdentifier: 
+  <IsStackable>k__BackingField: 1
+  <iID>k__BackingField: 0
+  <itemID>k__BackingField: 0000
+  <itemType>k__BackingField: 1
+  <MaxStackSize>k__BackingField: 99
+  <Name>k__BackingField: Apple
+  <Description>k__BackingField: Delicious food to eat!
+  <ItemImage>k__BackingField: {fileID: 21300000, guid: 60c1d42986dc0094c808b9e135f31ba2, type: 3}
