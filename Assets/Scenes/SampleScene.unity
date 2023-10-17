@@ -220,9 +220,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6df939a7203517478fcb3e4d634e6fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedItemGrid: {fileID: 0}
-  selectedItem: {fileID: 0}
-  rectTransform: {fileID: 0}
 --- !u!1 &715677072
 GameObject:
   m_ObjectHideFlags: 0
@@ -254,6 +251,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inventoryUI: {fileID: 1903810676}
   inventoryData: {fileID: 11400000, guid: 2f7748ac7bddb3243a0fe71231ac7059, type: 2}
+  initialItems:
+  - quantity: 1
+    item: {fileID: 11400000, guid: e544deccf9cfaab43a08ebe7b708ace7, type: 2}
 --- !u!4 &715677074
 Transform:
   m_ObjectHideFlags: 0
@@ -595,12 +595,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 014df5a1a3f723a4ab11471db6c21c97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rectTransform: {fileID: 0}
-  positionOnTheGrid: {x: 0, y: 0}
-  tileGridPosition: {x: 0, y: 0}
-  gridSizeWidth: 6
-  gridSizeHeight: 4
-  inventoryItemPrefab: {fileID: 7070302824483723751, guid: f698dbc9d40c33745b825245390a6c54, type: 3}
 --- !u!114 &1395487837
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -651,8 +645,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33ba799a2c058aa4f942c2f4949735bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventoryController: {fileID: 0}
-  itemGrid: {fileID: 0}
 --- !u!224 &1903810672 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2206958954223741826, guid: 1d00edd8d14465e4c90170c2e8c0a174, type: 3}
