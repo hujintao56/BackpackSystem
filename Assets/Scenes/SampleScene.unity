@@ -254,6 +254,7 @@ MonoBehaviour:
   initialItems:
   - quantity: 1
     item: {fileID: 11400000, guid: e544deccf9cfaab43a08ebe7b708ace7, type: 2}
+    isNew: 1
 --- !u!4 &715677074
 Transform:
   m_ObjectHideFlags: 0

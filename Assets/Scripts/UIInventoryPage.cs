@@ -53,11 +53,11 @@ namespace Inventory.UI
             }
         }
 
-        public void UpdateData(int itemIndex, Sprite itemImage, int itemQuantity)
+        public void UpdateData(int itemIndex, Sprite itemImage, int itemQuantity, bool isNew)
         {
             if (listOfUIItems.Count > itemIndex)
             {
-                listOfUIItems[itemIndex].SetData(itemImage, itemQuantity);
+                listOfUIItems[itemIndex].SetData(itemImage, itemQuantity, isNew);
             }
         }
 

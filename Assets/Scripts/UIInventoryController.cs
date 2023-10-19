@@ -42,7 +42,7 @@ namespace Inventory
             foreach (var item in inventoryState)
             {
                 inventoryUI.UpdateData(item.Key, item.Value.item.ItemImage, 
-                    item.Value.quantity);
+                    item.Value.quantity, item.Value.isNew);
             }
         }
 
@@ -94,7 +94,8 @@ namespace Inventory
                     {
                         inventoryUI.UpdateData(item.Key,
                             item.Value.item.ItemImage,
-                            item.Value.quantity);
+                            item.Value.quantity,
+                            item.Value.isNew);
                     }
                 }
                 else

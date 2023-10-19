@@ -9,14 +9,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d6d9d457c2dec4b4e84cbbcacad8f884, type: 3}
+  m_Script: {fileID: 11500000, guid: ad59d74d79d6ba645834f69c7c79c4ef, type: 3}
   m_Name: Apple
   m_EditorClassIdentifier: 
   <IsStackable>k__BackingField: 1
   <iID>k__BackingField: 0
   <itemID>k__BackingField: 0000
-  <itemType>k__BackingField: 1
+  <itemType>k__BackingField: 0
   <MaxStackSize>k__BackingField: 99
   <Name>k__BackingField: Apple
-  <Description>k__BackingField: Delicious food to eat!
+  <Description>k__BackingField: Delicious!
   <ItemImage>k__BackingField: {fileID: 21300000, guid: 60c1d42986dc0094c808b9e135f31ba2, type: 3}
+  modifiersData:
+  - statModifier: {fileID: 11400000, guid: d1f1b51065304ee4cb9676559ea5ebb9, type: 2}
+    value: 10

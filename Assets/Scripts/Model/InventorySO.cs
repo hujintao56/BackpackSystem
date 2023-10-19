@@ -55,7 +55,8 @@ namespace Inventory.Model
             InventoryItem newItem = new InventoryItem
             {
                 item = item,
-                quantity = quantity
+                quantity = quantity,
+                isNew = true
             };
 
             for (int i = 0; i < inventoryItems.Count; i++)
@@ -138,6 +139,7 @@ namespace Inventory.Model
     {
         public int quantity;
         public ItemSO item;
+        public bool isNew;
         public bool IsEmpty => item == null;
 
         public InventoryItem ChangeQuantity(int newQuantity)

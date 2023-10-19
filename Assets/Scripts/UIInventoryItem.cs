@@ -16,6 +16,8 @@ namespace Inventory.UI
         private Image itemImage;
         [SerializeField]
         private TMP_Text quantityTxt;
+        [SerializeField]
+        private TMP_Text newTxt;
 
         public Color selectedColor = new Color(255f / 255f, 144f / 255f, 0f / 255f, 255f / 255f);
         public Color unselectedColor = new Color(255f / 255f, 186f / 255f, 97f / 255f, 184f / 255f);
@@ -43,17 +45,22 @@ namespace Inventory.UI
             background.color = unselectedColor;
         }
 
-        public void SetData(Sprite sprite, int quantity)
+        public void SetData(Sprite sprite, int quantity, bool isNew)
         {
             itemImage.gameObject.SetActive(true);
             itemImage.sprite = sprite;
             quantityTxt.text = quantity + "";
             empty = false;
+            if (isNew)
+                newTxt.gameObject.SetActive(true);
+            else
+                newTxt.gameObject.SetActive(false);
         }
 
         public void Select()
         {
             background.color = selectedColor;
+            newTxt.gameObject.SetActive(false);
         }
 
         public void OnBeginDrag()
