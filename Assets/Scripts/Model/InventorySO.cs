@@ -105,6 +105,19 @@ namespace Inventory.Model
             return quantity;
         }
 
+        public void RemoveItem(int itemIndex, int amount)
+        {
+            if (inventoryItems[itemIndex].IsEmpty)
+                return;
+            int remainder = inventoryItems[itemIndex].quantity - amount;
+            if (remainder <= 0)
+                inventoryItems[itemIndex] = InventoryItem.GetEmptyItem();
+            else
+                inventoryItems[itemIndex] = inventoryItems[itemIndex].ChangeQuantity(remainder);
+
+            InformAboutChange();
+        }
+
         public void AddItem(InventoryItem item)
         {
             AddItem(item.item, item.quantity);

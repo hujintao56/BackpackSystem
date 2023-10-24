@@ -70,7 +70,12 @@ namespace Inventory.UI
 
         private void HandleShowItemActions(UIInventoryItem obj)
         {
-            throw new NotImplementedException();
+            int index = listOfUIItems.IndexOf(obj);
+            if (index == -1)
+            {
+                return;
+            }
+            OnItemActionRequested?.Invoke(index);
         }
 
         private void HandleEndDrag(UIInventoryItem obj)

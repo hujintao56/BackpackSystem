@@ -134,7 +134,6 @@ GameObject:
   - component: {fileID: 519420032}
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
-  - component: {fileID: 519420033}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -208,18 +207,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &519420033
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 519420028}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c6df939a7203517478fcb3e4d634e6fe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &715677072
 GameObject:
   m_ObjectHideFlags: 0
@@ -252,7 +239,7 @@ MonoBehaviour:
   inventoryUI: {fileID: 1903810676}
   inventoryData: {fileID: 11400000, guid: 2f7748ac7bddb3243a0fe71231ac7059, type: 2}
   initialItems:
-  - quantity: 1
+  - quantity: 99
     item: {fileID: 11400000, guid: e544deccf9cfaab43a08ebe7b708ace7, type: 2}
     isNew: 1
 --- !u!4 &715677074
@@ -555,8 +542,6 @@ GameObject:
   - component: {fileID: 1395487835}
   - component: {fileID: 1395487838}
   - component: {fileID: 1395487837}
-  - component: {fileID: 1395487836}
-  - component: {fileID: 1395487839}
   m_Layer: 5
   m_Name: Grid
   m_TagString: Untagged
@@ -584,18 +569,6 @@ RectTransform:
   m_AnchoredPosition: {x: 231, y: 542}
   m_SizeDelta: {x: 576, y: 384}
   m_Pivot: {x: 0, y: 1}
---- !u!114 &1395487836
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1395487834}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 014df5a1a3f723a4ab11471db6c21c97, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1395487837
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -634,18 +607,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1395487834}
   m_CullTransparentMesh: 1
---- !u!114 &1395487839
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1395487834}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 33ba799a2c058aa4f942c2f4949735bf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!224 &1903810672 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2206958954223741826, guid: 1d00edd8d14465e4c90170c2e8c0a174, type: 3}
