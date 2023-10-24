@@ -217,6 +217,7 @@ GameObject:
   m_Component:
   - component: {fileID: 715677074}
   - component: {fileID: 715677073}
+  - component: {fileID: 715677075}
   m_Layer: 0
   m_Name: player
   m_TagString: Untagged
@@ -242,6 +243,15 @@ MonoBehaviour:
   - quantity: 99
     item: {fileID: 11400000, guid: e544deccf9cfaab43a08ebe7b708ace7, type: 2}
     isNew: 1
+    itemState: []
+  - quantity: 1
+    item: {fileID: 11400000, guid: 9707ad92f7d37094fa5928b78965098b, type: 2}
+    isNew: 1
+    itemState: []
+  - quantity: 1
+    item: {fileID: 11400000, guid: 9707ad92f7d37094fa5928b78965098b, type: 2}
+    isNew: 1
+    itemState: []
 --- !u!4 &715677074
 Transform:
   m_ObjectHideFlags: 0
@@ -257,6 +267,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &715677075
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 715677072}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ddd2458e5d4af64dbaf11900f6e964d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weapon: {fileID: 0}
+  inventoryData: {fileID: 11400000, guid: 2f7748ac7bddb3243a0fe71231ac7059, type: 2}
+  parametersToModify:
+  - itemParameter: {fileID: 11400000, guid: 40bf6541621d7e84988e5ca47226fe54, type: 2}
+    value: -10
+  itemCurrentState: []
 --- !u!1 &798734604
 GameObject:
   m_ObjectHideFlags: 0

@@ -13,7 +13,7 @@ public class PickupSystem : MonoBehaviour
         Item item = collision.GetComponent<Item>();
         if(item != null)
         {
-            int remainder = inventoryData.AddItem(item.InventoryItem, item.Quantity);
+            int remainder = inventoryData.AddItem(item.InventoryItem, item.Quantity, item.isNew);
             if (remainder == 0)
                 item.DestroyItem();
             else

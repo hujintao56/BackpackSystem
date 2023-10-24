@@ -28,7 +28,7 @@ namespace Inventory.Model
 
         // 1. new item needs to show NEW in UI
         // 2. add item and call sort to re-arrange inventory
-        public int AddItem(ItemSO item, int quantity)
+        public int AddItem(ItemSO item, int quantity, bool isNew, List<ItemParameter> itemState = null)
         {
             if(item.IsStackable == false)
             {
@@ -36,13 +36,13 @@ namespace Inventory.Model
                 {
                     while(quantity > 0 && IsInventoryFull() == false)
                     {
-                        quantity -= AddItemToFirstFreeSlot(item, 1);
+                        quantity -= AddItemToFirstFreeSlot(item, 1, isNew, itemState);
                     }
                     InformAboutChange();
                     return quantity;
                 }
             }
-            quantity = AddStackableItem(item, quantity);
+            quantity = AddStackableItem(item, quantity, isNew);
             InformAboutChange();
             return quantity;
         }
@@ -50,13 +50,14 @@ namespace Inventory.Model
         private bool IsInventoryFull()
             => inventoryItems.Where(item => item.IsEmpty).Any() == false;
 
-        private int AddItemToFirstFreeSlot(ItemSO item, int quantity)
+        private int AddItemToFirstFreeSlot(ItemSO item, int quantity, bool isNew, List<ItemParameter> itemState = null)
         {
             InventoryItem newItem = new InventoryItem
             {
                 item = item,
                 quantity = quantity,
-                isNew = true
+                isNew = isNew,
+                itemState = new List<ItemParameter>(itemState == null ? item.DefaultParametersList : itemState)
             };
 
             for (int i = 0; i < inventoryItems.Count; i++)
@@ -70,7 +71,7 @@ namespace Inventory.Model
             return 0;
         }
 
-        private int AddStackableItem(ItemSO item, int quantity)
+        private int AddStackableItem(ItemSO item, int quantity, bool isNew)
         {
             for (int i = 0; i < inventoryItems.Count; i++)
             {
@@ -94,13 +95,14 @@ namespace Inventory.Model
                         InformAboutChange();
                         return 0;
                     }
+                    inventoryItems[i].AddNew();
                 }
             }
             while(quantity > 0 && IsInventoryFull() == false)
             {
                 int newQuantity = Mathf.Clamp(quantity, 0, item.MaxStackSize);
                 quantity -= newQuantity;
-                AddItemToFirstFreeSlot(item, newQuantity);
+                AddItemToFirstFreeSlot(item, newQuantity, isNew);
             }
             return quantity;
         }
@@ -114,13 +116,13 @@ namespace Inventory.Model
                 inventoryItems[itemIndex] = InventoryItem.GetEmptyItem();
             else
                 inventoryItems[itemIndex] = inventoryItems[itemIndex].ChangeQuantity(remainder);
-
+            inventoryItems[itemIndex].RemoveNew();
             InformAboutChange();
         }
 
         public void AddItem(InventoryItem item)
         {
-            AddItem(item.item, item.quantity);
+            AddItem(item.item, item.quantity, item.isNew);
         }
 
         public Dictionary<int, InventoryItem> GetCurrentInventoryState()
@@ -153,6 +155,7 @@ namespace Inventory.Model
         public int quantity;
         public ItemSO item;
         public bool isNew;
+        public List<ItemParameter> itemState;
         public bool IsEmpty => item == null;
 
         public InventoryItem ChangeQuantity(int newQuantity)
@@ -161,6 +164,30 @@ namespace Inventory.Model
             {
                 item = this.item,
                 quantity = newQuantity,
+                isNew = false,
+                itemState = new List<ItemParameter>(this.itemState)
+            };
+        }
+
+        public InventoryItem AddNew()
+        {
+            return new InventoryItem
+            {
+                item = this.item,
+                quantity = this.quantity,
+                isNew = true,
+                itemState = new List<ItemParameter>(this.itemState)
+            };
+        }
+
+        public InventoryItem RemoveNew()
+        {
+            return new InventoryItem
+            {
+                item = this.item,
+                quantity = this.quantity,
+                isNew = false,
+                itemState = new List<ItemParameter>(this.itemState)
             };
         }
 
@@ -169,6 +196,8 @@ namespace Inventory.Model
             {
                 item = null,
                 quantity = 0,
+                isNew = true,
+                itemState = new List<ItemParameter>()
             };
     }
 }

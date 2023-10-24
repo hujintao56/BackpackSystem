@@ -11,6 +11,9 @@ public class Item : MonoBehaviour
     [field: SerializeField]
     public int Quantity { get; set; } = 1;
 
+    [field: SerializeField]
+    public bool isNew { get; set; } = true;
+
     [SerializeField]
     private AudioSource audioSource;
 
