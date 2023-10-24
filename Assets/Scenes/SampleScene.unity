@@ -374,15 +374,15 @@ MonoBehaviour:
   initialItems:
   - quantity: 99
     item: {fileID: 11400000, guid: e544deccf9cfaab43a08ebe7b708ace7, type: 2}
-    isNew: 1
+    isNew: 0
     itemState: []
   - quantity: 1
     item: {fileID: 11400000, guid: 9707ad92f7d37094fa5928b78965098b, type: 2}
-    isNew: 1
+    isNew: 0
     itemState: []
   - quantity: 1
     item: {fileID: 11400000, guid: 9707ad92f7d37094fa5928b78965098b, type: 2}
-    isNew: 1
+    isNew: 0
     itemState: []
   dropClip: {fileID: 0}
   audioSource: {fileID: 0}

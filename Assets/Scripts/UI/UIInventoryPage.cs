@@ -124,7 +124,7 @@ namespace Inventory.UI
         public void ShowItemAction(int itemIndex)
         {
             actionPanel.Toggle(true);
-            actionPanel.transform.position = listOfUIItems[itemIndex].transform.position + new Vector3(50, -50, 0);
+            actionPanel.transform.position = listOfUIItems[itemIndex].transform.position + new Vector3(70, -70, 0);
         }
 
         private void DeselectAllItems()
